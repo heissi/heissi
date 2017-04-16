@@ -13,7 +13,7 @@ public:
 	stan stan_pola;
 	pole()
 	{
-		stan_pola = stan.puste;
+		stan_pola = stan::puste;
 	}
 };
 int main()
