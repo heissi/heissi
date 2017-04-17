@@ -1,6 +1,8 @@
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
+int x, y, k = 0, r = 0;
 class pole
 {
 public:
@@ -17,29 +19,52 @@ public:
 	}
 };
 pole plansza[3][3];
-int main()
+void rysuj()
 {
-	for (int y=0;y<3;y++)
+	cout << " -------------------------------- " << endl;
+	cout << "|        by Aneta Brzycka        |" << endl;
+	cout << " -------------------------------- " << endl;
+	for (int y = 0; y<3; y++)
 	{
-		for (int x=0;x<3;x++)
+		for (int x = 0; x<3; x++)
 		{
 			if (plansza[x][y].stan_pola == pole::stan::puste)
 			{
-				cout << " ";
+				cout << " |";
 			}
 			else if (plansza[x][y].stan_pola == pole::stan::kolko)
 			{
-				cout <<"O";
+				cout << "O|";
 			}
 			else
 			{
-				cout << "X";
+				cout << "X|";
 			}
 		}
 		cout << endl;
 	}
 
-	cout << "Hello World" << endl;
+}
+int main()
+{
+	rysuj();
+	while(k==0)
+	{
+		r++;
+		cout << r << endl;
+		cout << "Podaj wspolrzedne [x y]: ";
+		cin >> x;
+		cout << " ";
+		cin >> y;
+		if (r % 2 == 0)
+		{
+			cout << "kolko" << endl;
+		}
+		else
+		{
+			cout << "krzyzyk" << endl;
+		}
+	}
 	cin.get();
 	return 0;
 }
