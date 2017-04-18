@@ -58,11 +58,12 @@ int main()
 		cin >> y;
 		if (r % 2 == 0)
 		{
-			cout << "kolko" << endl;
+			cout << "krzyzyk" << endl;
+			
 		}
 		else
 		{
-			cout << "krzyzyk" << endl;
+			cout << "kolko" << endl;
 		}
 	}
 	cin.get();
