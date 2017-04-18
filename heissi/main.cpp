@@ -17,6 +17,7 @@ public:
 	{
 		stan_pola = stan::puste;
 	}
+
 };
 pole plansza[3][3];
 void rysuj()
@@ -24,6 +25,7 @@ void rysuj()
 	cout << " -------------------------------- " << endl;
 	cout << "|        by Aneta Brzycka        |" << endl;
 	cout << " -------------------------------- " << endl;
+	cout << endl;
 	for (int y = 0; y<3; y++)
 	{
 		for (int x = 0; x<3; x++)
@@ -51,19 +53,21 @@ int main()
 	while(k==0)
 	{
 		r++;
-		cout << r << endl;
 		cout << "Podaj wspolrzedne [x y]: ";
 		cin >> x;
 		cout << " ";
 		cin >> y;
 		if (r % 2 == 0)
 		{
-			cout << "krzyzyk" << endl;
-			
+			system("cls");
+			plansza[x+1][y+1].stan_pola = pole::stan::krzyzyk;
+			rysuj();
 		}
 		else
 		{
-			cout << "kolko" << endl;
+			system("cls");
+			plansza[x-1][y-1].stan_pola = pole::stan::kolko;
+			rysuj();
 		}
 	}
 	cin.get();
