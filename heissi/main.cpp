@@ -51,30 +51,90 @@ void rysuj()
 	}
 
 }
+
+
 int main()
 {
 	rysuj();
 	while(k==0)
 	{
-		cout << r;
+		cout << endl;
 		cout << "Podaj wspolrzedne [x y]: ";
 		cin >> x;
+		if((x<0)||(x>3))
+		{
+			system("cls");
+			main();
+		}
 		cout << " ";
 		cin >> y;
+		if ((y < 0) || (y > 3))
+		{
+			system("cls");
+			main();
+		}
 
 		if (r % 2 == 0)
 		{	
-			r++;
-			system("cls");
-			plansza[x - 1][y - 1].stan_pola = pole::stan::krzyzyk;
-			rysuj();
+			if (plansza[x - 1][y - 1].stan_pola == pole::stan::puste)
+			{
+				r++;
+				system("cls");
+				plansza[x - 1][y - 1].stan_pola = pole::stan::krzyzyk;
+				rysuj();
+				if (((plansza[0][0].stan_pola == pole::stan::krzyzyk)&(plansza[1][0].stan_pola == pole::stan::krzyzyk)&(plansza[2][0].stan_pola == pole::stan::krzyzyk)) || ((plansza[0][1].stan_pola == pole::stan::krzyzyk)&(plansza[1][1].stan_pola == pole::stan::krzyzyk)&(plansza[2][1].stan_pola == pole::stan::krzyzyk)) || ((plansza[0][2].stan_pola == pole::stan::krzyzyk)&(plansza[1][2].stan_pola == pole::stan::krzyzyk)&(plansza[2][2].stan_pola == pole::stan::krzyzyk)) || ((plansza[0][0].stan_pola == pole::stan::krzyzyk)&(plansza[0][1].stan_pola == pole::stan::krzyzyk)&(plansza[0][2].stan_pola == pole::stan::krzyzyk)) || ((plansza[1][0].stan_pola == pole::stan::krzyzyk)&(plansza[1][1].stan_pola == pole::stan::krzyzyk)&(plansza[1][2].stan_pola == pole::stan::krzyzyk)) || ((plansza[2][0].stan_pola == pole::stan::krzyzyk)&(plansza[2][1].stan_pola == pole::stan::krzyzyk)&(plansza[2][2].stan_pola == pole::stan::krzyzyk)) || ((plansza[0][0].stan_pola == pole::stan::krzyzyk)&(plansza[1][1].stan_pola == pole::stan::krzyzyk)&(plansza[2][2].stan_pola == pole::stan::krzyzyk)) || ((plansza[2][0].stan_pola == pole::stan::krzyzyk)&(plansza[1][1].stan_pola == pole::stan::krzyzyk)&(plansza[0][2].stan_pola == pole::stan::krzyzyk)))
+				{
+					cout << endl;
+					cout << "Wygral Gracz 2!";
+					cin.get();
+					break;
+					break;
+				}
+				if ((plansza[0][0].stan_pola != pole::stan::puste)&(plansza[0][1].stan_pola != pole::stan::puste)&(plansza[0][2].stan_pola != pole::stan::puste)&(plansza[1][0].stan_pola != pole::stan::puste)&(plansza[1][1].stan_pola != pole::stan::puste)&(plansza[1][2].stan_pola != pole::stan::puste)&(plansza[2][0].stan_pola != pole::stan::puste)&(plansza[2][1].stan_pola != pole::stan::puste)&(plansza[2][2].stan_pola != pole::stan::puste))
+				{
+					cout << endl;
+					cout << "Remis";
+					cin.get();
+					break;
+					break;
+				}
+			}
+			else
+			{ 
+				system("cls");
+				main();
+			}
 		}
 		else
 		{
-			r++;
-			system("cls");
-			plansza[x-1][y-1].stan_pola = pole::stan::kolko;
-			rysuj();
+			if (plansza[x - 1][y - 1].stan_pola == pole::stan::puste)
+			{
+				r++;
+				system("cls");
+				plansza[x - 1][y - 1].stan_pola = pole::stan::kolko;
+				rysuj();
+				if (((plansza[0][0].stan_pola == pole::stan::kolko)&(plansza[1][0].stan_pola == pole::stan::kolko)&(plansza[2][0].stan_pola == pole::stan::kolko)) || ((plansza[0][1].stan_pola == pole::stan::kolko)&(plansza[1][1].stan_pola == pole::stan::kolko)&(plansza[2][1].stan_pola == pole::stan::kolko)) || ((plansza[0][2].stan_pola == pole::stan::kolko)&(plansza[1][2].stan_pola == pole::stan::kolko)&(plansza[2][2].stan_pola == pole::stan::kolko)) || ((plansza[0][0].stan_pola == pole::stan::kolko)&(plansza[0][1].stan_pola == pole::stan::kolko)&(plansza[0][2].stan_pola == pole::stan::kolko)) || ((plansza[1][0].stan_pola == pole::stan::kolko)&(plansza[1][1].stan_pola == pole::stan::kolko)&(plansza[1][2].stan_pola == pole::stan::kolko))||((plansza[2][0].stan_pola == pole::stan::kolko)&(plansza[2][1].stan_pola == pole::stan::kolko)&(plansza[2][2].stan_pola == pole::stan::kolko))||((plansza[0][0].stan_pola == pole::stan::kolko)&(plansza[1][1].stan_pola == pole::stan::kolko)&(plansza[2][2].stan_pola == pole::stan::kolko))||((plansza[2][0].stan_pola == pole::stan::kolko)&(plansza[1][1].stan_pola == pole::stan::kolko)&(plansza[0][2].stan_pola == pole::stan::kolko)))
+				{
+					cout << endl;
+					cout << "Wygral Gracz 1!";
+					cin.get();
+					break;
+					break;
+				}
+				if((plansza[0][0].stan_pola != pole::stan::puste)&(plansza[0][1].stan_pola != pole::stan::puste)&(plansza[0][2].stan_pola != pole::stan::puste)&(plansza[1][0].stan_pola != pole::stan::puste)&(plansza[1][1].stan_pola != pole::stan::puste)&(plansza[1][2].stan_pola != pole::stan::puste)&(plansza[2][0].stan_pola != pole::stan::puste)&(plansza[2][1].stan_pola != pole::stan::puste)&(plansza[2][2].stan_pola != pole::stan::puste))
+				{
+					cout << endl;
+					cout << "Remis";
+					cin.get();
+					break;
+					break;
+				}
+			}
+			else
+			{
+				system("cls");
+				main();
+			}
 		}
 	}
 	cin.get();
